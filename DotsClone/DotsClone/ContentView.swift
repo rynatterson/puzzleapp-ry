@@ -9,44 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ZStack {
             
-            DragableImage(image: Image("image1"))
-                       .position(x: CGFloat(Int.random(in: 50...350)), y: CGFloat(Int.random(in: 50...700)))
-                       .scaleEffect(0.75)
-            DragableImage(image: Image("image2"))
-                       .position(x: CGFloat(Int.random(in: 50...350)), y: CGFloat(Int.random(in: 50...700)))
-                       .scaleEffect(0.75)
-            DragableImage(image: Image("image3"))
-                       .position(x: CGFloat(Int.random(in: 50...350)), y: CGFloat(Int.random(in: 50...700)))
-                       .scaleEffect(0.75)
-            DragableImage(image: Image("image4"))
-                       .position(x: CGFloat(Int.random(in: 50...350)), y: CGFloat(Int.random(in: 50...700)))
-                       .scaleEffect(0.75)
-            DragableImage(image: Image("image5"))
-                       .position(x: CGFloat(Int.random(in: 50...350)), y: CGFloat(Int.random(in: 50...700)))
-                       .scaleEffect(0.75)
-            DragableImage(image: Image("image6"))
-                       .position(x: CGFloat(Int.random(in: 30...140)), y: CGFloat(Int.random(in: 30...140)))
-                       .scaleEffect(0.75)
-            DragableImage(image: Image("image7"))
-                       .position(x: CGFloat(Int.random(in: 30...140)), y: CGFloat(Int.random(in: 30...140)))
-                       .scaleEffect(0.75)
-            DragableImage(image: Image("image8"))
-                       .position(x: CGFloat(Int.random(in: 30...140)), y: CGFloat(Int.random(in: 30...140)))
-                       .scaleEffect(0.75)
-            DragableImage(image: Image("image9"))
-                       .position(x: CGFloat(Int.random(in: 30...140)), y: CGFloat(Int.random(in: 30...140)))
-                       .scaleEffect(0.75)
-                   
-      
-            
+            DragableImage(imageName: "image1", endLocation: CGPointMake(120,120))
+            DragableImage(imageName: "image2", endLocation: CGPointMake(0,120))
+            DragableImage(imageName: "image3", endLocation: CGPointMake(-120,120))
+            DragableImage(imageName: "image4", endLocation: CGPointMake(120,0))
+            DragableImage(imageName: "image5", endLocation: CGPointMake(0,0))
+            DragableImage(imageName: "image6", endLocation: CGPointMake(-120,0))
+            DragableImage(imageName: "image7", endLocation: CGPointMake(120,-120))
+            DragableImage(imageName: "image8", endLocation: CGPointMake(0,-120))
+            DragableImage(imageName: "image9", endLocation: CGPointMake(-120,-120))
         }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        DragableImage()
-    }
-}
+            
+        }
+        struct ContentView_Previews: PreviewProvider {
+            static var previews: some View {
+                DragableImage(imageName: "hi", endLocation: CGPoint(x:0,y:0))
+            }
+        }
+    
